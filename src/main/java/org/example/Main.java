@@ -2,21 +2,21 @@ package org.example;
 
 public class Main {
     public static void main(String[] args) {
-        AllMethods allMethods = new AllMethods();
-        allMethods.printThreeWords();
-        allMethods.checkSumSign();
-        allMethods.printColor();
-        allMethods.compareNumbers();
-        System.out.println(allMethods.sumFromTenToTwenty(12, 6));
-        allMethods.checkPlusOrMinusSign(-3);
-        System.out.println(allMethods.checkPlusOrMinusSignBoolean(-6));
-        allMethods.printTextSeveralTimes(5, "abc");
-        System.out.println(allMethods.isLeapYear(2000));
-        allMethods.invertArray();
-        allMethods.emptyArray();
-        allMethods.multipleOnTwoArray();
-        allMethods.fillDiagonal();
-        allMethods.printArrayInConsole(allMethods.retLenArr(5, 1));
-    }
+        Employee employee = new Employee("Антон", "Антонов", "Антонович","прораб", "anton.antonov.1991@gmail.com", 60000, "+78083455678", 37);
+        employee.printInfo();
+        System.out.println(employee);
 
+        Employee[] employees = new Employee[5];
+        employees[0] = new Employee("Андрей", "Андреев", "Андреевич","прораб", "anton.antonov.1991@gmail.com", 60000, "+78083455678", 32);
+        employees[1] = new Employee("Павел", "Павлов", "Павлович","прораб", "anton.antonov.1992@gmail.com", 70000, "+78083455678", 37);
+        employees[2] = new Employee("Иван", "Иванов", "Иванович","прораб", "anton.antonov.1993@gmail.com", 60000, "+78083455678", 33);
+        employees[3] = new Employee("Роман", "Романов", "Романович","прораб", "anton.antonov.1994@gmail.com", 70000, "+78083455678", 38);
+        employees[4] = new Employee("Антон", "Антонов", "Антонович","прораб", "anton.antonov.1995@gmail.com", 65000, "+78083455678", 35);
+        for(Employee employee1: employees) {
+            System.out.println(employee1);
+        }
+
+        Park.Attractions attractions = new Park.Attractions("Карусель", "10 минут", 5.0);
+        System.out.println(attractions);
+    }
 }
