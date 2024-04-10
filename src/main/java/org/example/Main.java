@@ -1,46 +1,33 @@
 package org.example;
 
 
+import java.util.List;
+import java.util.stream.Stream;
+
 public class Main {
     public static void main(String[] args) {
-        String[][] correctMatrix = {
-                {"3", "7", "3", "1"},
-                {"1", "6", "0", "4"},
-                {"0", "4", "9", "2"},
-                {"5", "2", "7", "8"}
-        };
-        String[][] wrongSizeMatrix = {
-                {"1", "2", "0", "3"},
-                {"3", "4", "1", "5"},
-                {"9", "6", "7", "4"},
-                {"0", "5"}
-        };
-        String[][] wrongCharMatrix = {
-                {"4", "9", "2", "3"},
-                {"F", "1", "5", "9"},
-                {"2", "8", "7", "6"},
-                {"1", "7", "R", "5"}
-        };
+        String[] values = {"apple", "orange", "banana", "berry", "banana", "apple", "cherry", "lemon", "grape"};
+        UniqueWordsAndCount.countAllWords(values);
+        UniqueWordsAndCount.uniqueWords(values);
 
-        try {
-            System.out.println("Вариант 1:");
-            System.out.println("Сумма всех элементов массива равна " + ConverterAndSum.strConverter(correctMatrix) + ".\n");
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
+        PhoneBook phoneBook = new PhoneBook();
+        phoneBook.add("Antonov", "+375298881122");
+        phoneBook.add("Ivanov", "+375299096743");
+        phoneBook.add("Borisov", "+375293654412");
+        phoneBook.add("Antonov", "+375297123456");
+
+        System.out.println("Ivanov:");
+        List<String> ivanovNumbers = phoneBook.get("Ivanov");
+        for(String number: ivanovNumbers) {
+            System.out.println(number);
         }
 
-        try {
-            System.out.println("Вариант 2:");
-            System.out.println("Сумма всех элементов массива равна " + ConverterAndSum.strConverter(wrongSizeMatrix) + ".\n");
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
+        System.out.println("Antonov:");
+        List<String> antonovNumbers = phoneBook.get("Antonov");
+        for(String number: antonovNumbers) {
+            System.out.println(number);
         }
 
-        try {
-            System.out.println("Вариант 3:");
-            System.out.println("Сумма всех элементов массива равна " + ConverterAndSum.strConverter(wrongCharMatrix) + ".\n");
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
+        System.out.println(phoneBook.allNumbersAntonov());
     }
 }
